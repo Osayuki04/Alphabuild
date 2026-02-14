@@ -145,7 +145,7 @@ const ServicesPage = () => {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full lg:h-[75vh] max-lg:h-[50vh] mb-2"
+        className="relative w-full lg:h-[75vh] max-lg:h-[60vh] mb-2"
         style={{ cursor: "pointer" }}
       >
         <div className="absolute inset-0 w-full">
@@ -161,7 +161,7 @@ const ServicesPage = () => {
         </div>
         {/* Centered Content with animation */}
         <motion.div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex flex-col items-center justify-center"
           style={{
             willChange: "transform",
             transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
@@ -178,6 +178,15 @@ const ServicesPage = () => {
           >
             Services
           </motion.h1>
+            <motion.p
+            className="text-white text-base text-center md:text-lg max-w-2xl mx-auto mt-2 drop-shadow-md"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            We offer a wide range of construction services tailored to meet
+            the needs of our clients.
+          </motion.p> 
         </motion.div>
       </div>
 

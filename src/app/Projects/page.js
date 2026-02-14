@@ -19,13 +19,132 @@ const ProjectsPage = () => {
     "RENOVATION",
   ];
 
+  // Updated projects array with title and description
   const projects = [
-    { id: 1, category: "ARCHITECTURE", src: "/images/projects1.jpg" },
-    { id: 2, category: "GARDENING", src: "/images/projects2.jpg" },
-    { id: 3, category: "INTERIOR", src: "/images/projects3.jpg" },
-    { id: 4, category: "LANDSCAPE", src: "/images/projects4.jpg" },
-    { id: 5, category: "RENOVATION", src: "/images/projects5.jpg" },
-    { id: 6, category: "ARCHITECTURE", src: "/images/projects6.jpg" },
+    //architecture
+    {
+      id: 1,
+      src: "/images/archi1.jpg",
+      category: "ARCHITECTURE",
+      title: "Blay Architecture plan",
+      description: "A modern architectural design for a residential building.",
+    },
+    {
+      id: 2,
+      src: "/images/archi2.jpg",
+      category: "ARCHITECTURE",
+      title: "Maze Bay plan",
+      description: "A stunning architectural project located by the bay.",
+    },
+    {
+      id: 3,
+      src: "/images/archi3.webp",
+      category: "ARCHITECTURE",
+      title: "Sierra plan",
+      description: "An innovative design nestled in the mountains.",
+    },
+    {
+      id: 4,
+      src: "/images/archi4.jpg",
+      category: "ARCHITECTURE",
+      title: "Jayx plan",
+      description: "A futuristic architectural concept.",
+    },
+
+    //gardening
+    {
+      id: 5,
+      src: "/images/garden1.jpeg",
+      category: "GARDENING",
+      title: "Prime Garden ",
+      description: "A beautiful garden design with a variety of plants.",
+    },
+    {
+      id: 6,
+      src: "/images/garden2.jpg",
+      category: "GARDENING",
+      title: "Grux Garden ",
+      description: "A modern garden with sleek lines and minimalistic design.",
+    },
+    {
+      id: 7,
+      src: "/images/garden3.jpg",
+      category: "GARDENING",
+      title: "Gardenes tulix",
+      description: "A vibrant garden filled with colorful flowers.",
+    },
+
+    //interior
+    {
+      id: 8,
+      src: "/images/inti.jpg",
+      category: "INTERIOR",
+      title: "Hunt Mansion",
+      description: "An opulent mansion with classic interior design.",
+    },
+    {
+      id: 9,
+      src: "/images/inti2.webp",
+      category: "INTERIOR",
+      title: "Kulesjk Mansion",
+      description: "A contemporary mansion with unique architectural features.",
+    },
+    {
+      id: 10,
+      src: "/images/inti3.webp",
+      category: "INTERIOR",
+      title: "Meridian Mansion",
+      description: "A luxurious mansion with modern interior design.",
+    },
+    {
+      id: 11,
+      src: "/images/inti4.jpg",
+      category: "INTERIOR",
+      title: "Seclorum Mansion",
+      description:
+        "A grand mansion with intricate details and elegant furnishings.",
+    },
+
+    //landscape
+    {
+      id: 12,
+      src: "/images/land1.jpg",
+      category: "LANDSCAPE",
+      title: "Griffin Landscape",
+      description: "A beautiful landscape design featuring lush greenery.",
+    },
+    {
+      id: 13,
+      src: "/images/land2.jpeg",
+      category: "LANDSCAPE",
+      title: "Vortex Landscape",
+      description: "A modern landscape design with geometric shapes.",
+    },
+    {
+      id: 14,
+      src: "/images/projects3.jpg",
+      category: "LANDSCAPE",
+      title: "Serenity Landscape",
+      description: "A serene landscape design with a focus on tranquility.",
+    },
+
+    //renovation
+    {
+      id: 15,
+      src: "/images/reno1.jpg",
+      category: "RENOVATION",
+      title: "Kenny Renovation",
+      description:
+        "A comprehensive renovation project for a historic building.",
+    },
+    {
+      id: 16,
+      src: "/images/reno2.jpg",
+      category: "RENOVATION",
+      title: "Malvis Renovation",
+      description:
+        "A modern renovation project with innovative design elements.",
+    },
   ];
 
   const [active, setActive] = useState("ALL PROJECTS");
@@ -113,28 +232,6 @@ const ProjectsPage = () => {
     },
   };
 
-  // Showcase projects for the "Latest Project" section
-  const showcaseProjects = [
-    {
-      id: 1,
-      category: "PUBLIC BUILDING",
-      title: "The Triangle City Square",
-      image: "/images/projects1.jpg",
-    },
-    {
-      id: 2,
-      category: "SPORT CENTER",
-      title: "Graha Super Sports",
-      image: "/images/projects2.jpg",
-    },
-    {
-      id: 3,
-      category: "OFFICE TOWER",
-      title: "Great Block Tower",
-      image: "/images/projects3.jpg",
-    },
-  ];
-
   const cardVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.97 },
     visible: (i) => ({
@@ -150,7 +247,7 @@ const ProjectsPage = () => {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full lg:h-[75vh] max-lg:h-[50vh] mb-2"
+        className="relative w-full lg:h-[75vh] max-lg:h-[60vh] mb-2"
         style={{ cursor: "pointer" }}
       >
         <div className="absolute inset-0 w-full rounded-md">
@@ -166,7 +263,7 @@ const ProjectsPage = () => {
         </div>
         {/* Centered Content with animation */}
         <motion.div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
           style={{
             willChange: "transform",
             transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
@@ -183,6 +280,15 @@ const ProjectsPage = () => {
           >
             Our Projects
           </motion.h1>
+          <motion.p
+            className="text-white text-base md:text-lg max-w-2xl mx-auto mt-2 drop-shadow-md "
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+          >
+            Discover our diverse portfolio of projects, each crafted with
+            precision, creativity, and a commitment to excellence. 
+          </motion.p>
         </motion.div>
       </div>
 
@@ -214,15 +320,15 @@ const ProjectsPage = () => {
         </div>
       </div>
 
-      {/* Grid */}
+      {/* Responsive Grid/List */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 xl:px-20 "
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 xl:px-20"
         variants={gridVariants}
         initial="hidden"
         animate="visible"
       >
         <AnimatePresence mode="wait">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
               variants={cardVariants}
@@ -230,22 +336,31 @@ const ProjectsPage = () => {
               animate="visible"
               exit="exit"
               layout
-              className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg group"
+              className="relative w-full rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col"
             >
-              <FollowTooltip text={`Project ${project.id}`}>
-                <div className="relative w-full h-full">
+              <FollowTooltip text={project.title}>
+                <div className="relative w-full h-72 sm:h-80 md:h-[28rem]">
                   <Image
                     src={project.src}
-                    alt={`Project ${project.id}`}
+                    alt={project.title}
                     fill
-                    sizes="(max-width:768px) 100vw,
-                           (max-width:1200px) 50vw,
-                           33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 cursor-pointer" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 group-hover:scale-105 transition-all duration-300 cursor-pointer" />
+                </div>
+                <div className="flex-1 flex flex-col justify-between p-5">
+                  <div>
+                    <div className="text-xs font-semibold text-[#F4B400] uppercase tracking-widest mb-1 mt-1">
+                      {project.category}
+                    </div>
+                    <div className="text-lg font-bold text-gray-900 mb-2">
+                      {project.title}
+                    </div>
+                    <div className="text-gray-600 text-sm mb-3">
+                      {project.description}
+                    </div>
+                  </div>
                 </div>
               </FollowTooltip>
             </motion.div>
@@ -255,7 +370,7 @@ const ProjectsPage = () => {
 
       {/* Showcase Section */}
       <div className="w-full bg-white py-12 px-4 sm:px-8 mt-12">
-        <div className="max-w-7xl mx-auto flex flex-col xl:flex-row gap-8 items-stretch">
+        <div className="max-w-[90rem] mx-auto flex flex-col xl:flex-row gap-8 items-stretch">
           {/* Latest Project Description */}
           <motion.div
             className="flex-1 flex flex-col justify-center px-2 mb-8 xl:mb-0 w-full xl:w-auto"
@@ -265,55 +380,69 @@ const ProjectsPage = () => {
             style={{ maxWidth: "100%" }}
           >
             <div className="text-md font-semibold text-[#F4B400] uppercase tracking-widest mb-2">
-              Latest Project
+              Award Winning Projects
             </div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 leading-tight">
-              From Up To Down It’s Made Up <br /> Of The Best Quality
+              From Up To Down It’s Made Up <br /> Of Our Best Works
             </h2>
-            <p className="text-gray-700 max-w-md">
-              Our latest project, The Triangle City Square, is a testament to
-              our commitment to excellence and innovation in construction. This
-              iconic public space seamlessly blends modern design with
-              functionality, creating a vibrant hub for community engagement and
-              cultural events.
+            <p className="text-gray-700  xl:max-w-md w-full">
+              Explore our award-winning projects that showcase our commitment to
+              excellence and innovation in design. Each project is a testament
+              to our dedication to creating spaces that inspire and delight.
+              From stunning architecture to breathtaking landscapes, our
+              portfolio reflects our passion for delivering exceptional results
+              that exceed expectations.
             </p>
           </motion.div>
           {/* Project Cards */}
-          <div className="flex flex-col sm:flex-row gap-6 flex-1">
-            {showcaseProjects.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                className="relative rounded-xl overflow-hidden shadow-lg flex-1 min-w-[220px] max-w-full group"
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                custom={idx}
-                whileHover={{
-                  scale: 1.03,
-                  boxShadow: "0 8px 32px rgba(244,179,0,0.10)",
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 24 }}
-              >
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={260}
-                  className="object-cover w-full h-full"
-                  sizes="(max-width:768px) 100vw, 400px"
-                  priority={idx === 0}
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6">
-                  <div className="text-xs font-semibold text-[#F4B400] uppercase tracking-widest mb-1">
-                    {project.category}
-                  </div>
-                  <div className="text-white text-lg font-bold mb-4 leading-tight drop-shadow">
-                    {project.title}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-6 flex-1 w-full">
+            {[
+              projects.find((p) => p.category === "INTERIOR"),
+              projects.find((p) => p.category === "LANDSCAPE"),
+              projects.find((p) => p.category === "ARCHITECTURE"),
+            ].map(
+              (project, idx) =>
+                project && (
+                  <motion.div
+                    key={project.id}
+                    className="relative rounded-xl overflow-hidden shadow-lg flex-1 min-w-[220px] max-w-full group bg-white flex flex-col"
+                    variants={cardVariants}
+                    initial="hidden"
+                    animate="visible"
+                    custom={idx}
+                    whileHover={{
+                      scale: 1.03,
+                      boxShadow: "0 8px 32px rgba(244,179,0,0.10)",
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 24 }}
+                  >
+                    <div className="relative w-full h-64 sm:h-72 md:h-80">
+                      <Image
+                        src={project.src}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width:768px) 100vw, 400px"
+                        className="object-cover w-full h-full"
+                        priority={idx === 0}
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
+                      <div className="absolute inset-0 flex flex-col justify-end p-6">
+                        <div className="text-xs font-semibold text-[#F4B400] uppercase tracking-widest mb-1">
+                          {project.category}
+                        </div>
+                        <div className="text-white text-lg font-bold mb-2 leading-tight drop-shadow">
+                          {project.title}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex-1 flex flex-col justify-between p-5 bg-white">
+                      <div className="text-gray-600 text-sm mb-3">
+                        {project.description}
+                      </div>
+                    </div>
+                  </motion.div>
+                ),
+            )}
           </div>
         </div>
       </div>
@@ -328,8 +457,13 @@ const ProjectsPage = () => {
           }
         }
         @media (max-width: 1024px) {
-          .grid-cols-3 {
-            grid-template-columns: repeat(3, 1fr);
+          .max-w-7xl.flex-col,
+          .max-w-7xl.flex-col-reverse {
+            flex-direction: column !important;
+          }
+          .flex-1.flex.flex-col.justify-center.px-2.mb-8.xl\\:mb-0.w-full.xl\\:w-auto {
+            max-width: 100% !important;
+            width: 100% !important;
           }
         }
         @media (max-width: 768px) {

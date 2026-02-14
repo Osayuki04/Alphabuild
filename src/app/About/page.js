@@ -3,8 +3,66 @@
 import React, { useRef, useState, useEffect } from "react";
 import Footer2 from "@/components/UI/footer2";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+
+// Simple animated counter hook
+function useCountUp(to, duration = 1200) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    const startTime = performance.now();
+    function animate(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      setCount(Math.floor(progress * to));
+      if (progress < 1) requestAnimationFrame(animate);
+      else setCount(to);
+    }
+    requestAnimationFrame(animate);
+    // eslint-disable-next-line
+  }, [to, duration]);
+  return count;
+}
+
+const sectorCards = [
+  {
+    title: "Commercial",
+    desc: "Commercial construction projects require a unique blend of functionality, aesthetics, and efficiency.",
+
+    icon: "1.",
+  },
+  {
+    title: "Retail",
+    desc: "Wide expertise in retail construction, we have successfully completed numerous retail projects.",
+    color: "bg-[#F4B400]/10 border-[#F4B400]",
+    icon: "2.",
+  },
+  {
+    title: "Industrial",
+    desc: "Our industrial construction projects encompass a wide range of facilities.",
+
+    icon: "3.",
+  },
+  {
+    title: "Educational",
+    desc: "Educational construction projects require a unique blend of functionality, safety, and aesthetics.",
+
+    icon: "4.",
+  },
+  {
+    title: "Residential",
+    desc: "Residential construction projects require a unique blend of functionality, safety, and aesthetics.",
+
+    icon: "5.",
+  },
+  {
+    title: "Engineering",
+    desc: "Our engineering construction projects encompass a wide range of infrastructure developments.",
+
+    icon: "6.",
+  },
+];
 
 const AboutPage = () => {
   // Parallax state for hero text
@@ -88,12 +146,30 @@ const AboutPage = () => {
     exit: { opacity: 0, y: 40, scale: 0.97, transition: { duration: 0.4 } },
   };
 
+  // Animated stats
+  const years = useCountUp(32, 1800);
+  const clients = useCountUp(95, 1800);
+  const projects = useCountUp(1476, 1800);
+  const team = useCountUp(80, 1800);
+
+  // For Quality & Results Section
+  const qualityRef = useRef(null);
+  const qualityInView = useInView(qualityRef, { once: true, amount: 0.3 });
+
+  // For Stats Section
+  const statsRef = useRef(null);
+  const statsInView = useInView(statsRef, { once: true, amount: 0.3 });
+
+  // For Sectors Section
+  const sectorsRef = useRef(null);
+  const sectorsInView = useInView(sectorsRef, { once: true, amount: 0.2 });
+
   return (
     <section className="w-full bg-white">
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full lg:h-[75vh] max-lg:h-[50vh] mb-2"
+        className="relative w-full lg:h-[75vh] max-lg:h-[60vh] mb-2"
         style={{ cursor: "pointer" }}
       >
         <div className="absolute inset-0 w-full">
@@ -126,14 +202,24 @@ const AboutPage = () => {
           >
             About Us
           </motion.h1>
+          <motion.p
+            className="text-white text-base text-center md:text-lg max-w-2xl mx-auto mt-2 drop-shadow-md"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            We are a leading construction company with over 32 years of
+            experience in delivering exceptional results across various sectors.
+          </motion.p>
         </motion.div>
       </div>
 
       {/* Quality & Results Section */}
       <motion.div
+        ref={qualityRef}
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4 py-16"
         initial="hidden"
-        animate="visible"
+        animate={qualityInView ? "visible" : "hidden"}
         variants={{
           visible: { transition: { staggerChildren: 0.14 } },
         }}
@@ -163,9 +249,14 @@ const AboutPage = () => {
             Committed To Superior Quality & Results
           </h2>
           <p className="text-gray-700 mb-4">
-             We are dedicated to delivering superior quality and exceptional results in every project we undertake. With a relentless commitment to excellence, we strive to exceed our clients expectations by providing innovative solutions.   </p>
+            We are dedicated to delivering superior quality and exceptional
+            results in every project we undertake. With a relentless commitment
+            to excellence, we strive to exceed our clients expectations by
+            providing innovative solutions.{" "}
+          </p>
           <p className="text-gray-700 mb-6">
-              Our team of skilled professionals is passionate about craftsmanship and attention to detail.
+            Our team of skilled professionals is passionate about craftsmanship
+            and attention to detail.
           </p>
           <div className="flex flex-col gap-4">
             <div className="flex items-start gap-3">
@@ -173,10 +264,11 @@ const AboutPage = () => {
               <div>
                 <div className="font-bold text-gray-900 text-base">Quality</div>
                 <div className="text-gray-700 text-sm">
-                  We are committed to delivering superior quality in every aspect of our work.
+                  We are committed to delivering superior quality in every
+                  aspect of our work.
                 </div>
               </div>
-            </div>  
+            </div>
             <div className="flex items-start gap-3">
               <FaCheckCircle className="text-[#F4B400] mt-1" size={22} />
               <div>
@@ -184,7 +276,8 @@ const AboutPage = () => {
                   Reliability
                 </div>
                 <div className="text-gray-700 text-sm">
-                  We are a reliable partner, consistently delivering projects on time and within budget.
+                  We are a reliable partner, consistently delivering projects on
+                  time and within budget.
                 </div>
               </div>
             </div>
@@ -194,9 +287,10 @@ const AboutPage = () => {
 
       {/* Stats Section */}
       <motion.div
+        ref={statsRef}
         className="w-full relative py-12"
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={statsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Background image with black overlay */}
@@ -218,7 +312,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
             <div className="text-3xl md:text-4xl font-bold text-[#F4B400] mb-2">
-              32+
+              {years}+
             </div>
             <div className="text-white text-sm md:text-base font-semibold">
               Years of Experience
@@ -231,7 +325,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
             <div className="text-3xl md:text-4xl font-bold text-[#F4B400] mb-2">
-              95%
+              {clients}%
             </div>
             <div className="text-white text-sm md:text-base font-semibold">
               Happy Clients
@@ -244,7 +338,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
             <div className="text-3xl md:text-4xl font-bold text-[#F4B400] mb-2">
-              1,476+
+              {projects}+
             </div>
             <div className="text-white text-sm md:text-base font-semibold">
               Complete Project
@@ -257,7 +351,7 @@ const AboutPage = () => {
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
           >
             <div className="text-3xl md:text-4xl font-bold text-[#F4B400] mb-2">
-              80+
+              {team}+
             </div>
             <div className="text-white text-sm md:text-base font-semibold">
               Professional Team
@@ -268,9 +362,10 @@ const AboutPage = () => {
 
       {/* Sectors Section */}
       <motion.div
+        ref={sectorsRef}
         className="max-w-6xl mx-auto px-4 py-16"
         initial="hidden"
-        animate="visible"
+        animate={sectorsInView ? "visible" : "hidden"}
         variants={{
           visible: { transition: { staggerChildren: 0.12 } },
         }}
@@ -283,7 +378,9 @@ const AboutPage = () => {
             Sector We Work In
           </h2>
           <p className="text-gray-700 mb-4 max-w-xl">
-              We have a proven track record of delivering exceptional results across a wide range of sectors, including commercial, retail, industrial, educational, residential, and engineering projects. 
+            We have a proven track record of delivering exceptional results
+            across a wide range of sectors, including commercial, retail,
+            industrial, educational, residential, and engineering projects.
           </p>
           {/* <motion.button
             className="bg-[#F4B400] text-white px-6 py-2 rounded font-semibold hover:bg-[#dca900] transition-all duration-200"
@@ -298,34 +395,22 @@ const AboutPage = () => {
           custom={1}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          <div>
-            <div className="font-bold text-gray-900 mb-2">1. Commercial</div>
-            <div className="text-gray-700 text-sm mb-4">
-              commercial construction projects require a unique blend of functionality, aesthetics, and efficiency.    </div>
-            <div className="font-bold text-gray-900 mb-2">2. Retail</div>
-            <div className="text-gray-700 text-sm mb-4">
-               Wide expertise in retail construction, we have successfully completed numerous retail projects. </div>
-          </div>
-          <div>
-            <div className="font-bold text-gray-900 mb-2">3. Industrial</div>
-            <div className="text-gray-700 text-sm mb-4">
-              Our industrial construction projects encompass a wide range of facilities.
-            </div>
-            <div className="font-bold text-gray-900 mb-2">4. Educational</div>
-            <div className="text-gray-700 text-sm mb-4">
-             Educational construction projects require a unique blend of functionality, safety, and aesthetics. 
-            </div>
-          </div>
-          <div>
-            <div className="font-bold text-gray-900 mb-2">5. Residential</div>
-            <div className="text-gray-700 text-sm mb-4">
-             Residential construction projects require a unique blend of functionality, safety, and aesthetics.
-            </div>
-            <div className="font-bold text-gray-900 mb-2">6. Engineering</div>
-            <div className="text-gray-700 text-sm mb-4">
-              Our engineering construction projects encompass a wide range of infrastructure developments.
-            </div>
-          </div>
+          {sectorCards.map((sector, index) => (
+            <motion.div
+              key={index}
+              className={`p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  hover:bg-gray-50`}
+              whileHover={{ scale: 1.03 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="text-4xl">{sector.icon}</div>
+              <div className="text-lg font-semibold text-gray-900">
+                {sector.title}
+              </div>
+              <div className="text-gray-700 text-sm">{sector.desc}</div>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
 

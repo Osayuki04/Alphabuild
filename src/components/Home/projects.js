@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function Projects() {
   const tabs = [
@@ -22,12 +23,130 @@ export default function Projects() {
   ];
 
   const projects = [
-    { id: 1, category: "ARCHITECTURE", src: "/images/projects1.jpg" },
-    { id: 2, category: "GARDENING", src: "/images/projects2.jpg" },
-    { id: 3, category: "INTERIOR", src: "/images/projects3.jpg" },
-    { id: 4, category: "LANDSCAPE", src: "/images/projects4.jpg" },
-    { id: 5, category: "RENOVATION", src: "/images/projects5.jpg" },
-    { id: 6, category: "ARCHITECTURE", src: "/images/projects6.jpg" },
+    //architecture
+    {
+      id: 1,
+      src: "/images/archi1.jpg",
+      category: "ARCHITECTURE",
+      title: "Blay Architecture plan",
+      description: "A modern architectural design for a residential building.",
+    },
+    {
+      id: 2,
+      src: "/images/archi2.jpg",
+      category: "ARCHITECTURE",
+      title: "Maze Bay plan",
+      description: "A stunning architectural project located by the bay.",
+    },
+    {
+      id: 3,
+      src: "/images/archi3.webp",
+      category: "ARCHITECTURE",
+      title: "Sierra plan",
+      description: "An innovative design nestled in the mountains.",
+    },
+    {
+      id: 4,
+      src: "/images/archi4.jpg",
+      category: "ARCHITECTURE",
+      title: "Jayx plan",
+      description: "A futuristic architectural concept.",
+    },
+
+    //gardening
+    {
+      id: 5,
+      src: "/images/garden1.jpeg",
+      category: "GARDENING",
+      title: "Prime Garden ",
+      description: "A beautiful garden design with a variety of plants.",
+    },
+    {
+      id: 6,
+      src: "/images/garden2.jpg",
+      category: "GARDENING",
+      title: "Grux Garden ",
+      description: "A modern garden with sleek lines and minimalistic design.",
+    },
+    {
+      id: 7,
+      src: "/images/garden3.jpg",
+      category: "GARDENING",
+      title: "Gardenes tulix",
+      description: "A vibrant garden filled with colorful flowers.",
+    },
+
+    //interior
+    {
+      id: 8,
+      src: "/images/inti.jpg",
+      category: "INTERIOR",
+      title: "Hunt Mansion",
+      description: "An opulent mansion with classic interior design.",
+    },
+    {
+      id: 9,
+      src: "/images/inti2.webp",
+      category: "INTERIOR",
+      title: "Kulesjk Mansion",
+      description: "A contemporary mansion with unique architectural features.",
+    },
+    {
+      id: 10,
+      src: "/images/inti3.webp",
+      category: "INTERIOR",
+      title: "Meridian Mansion",
+      description: "A luxurious mansion with modern interior design.",
+    },
+    {
+      id: 11,
+      src: "/images/inti4.jpg",
+      category: "INTERIOR",
+      title: "Seclorum Mansion",
+      description:
+        "A grand mansion with intricate details and elegant furnishings.",
+    },
+
+    //landscape
+    {
+      id: 12,
+      src: "/images/land1.jpg",
+      category: "LANDSCAPE",
+      title: "Griffin Landscape",
+      description: "A beautiful landscape design featuring lush greenery.",
+    },
+    {
+      id: 13,
+      src: "/images/land2.jpeg",
+      category: "LANDSCAPE",
+      title: "Vortex Landscape",
+      description: "A modern landscape design with geometric shapes.",
+    },
+    {
+      id: 14,
+      src: "/images/projects3.jpg",
+      category: "LANDSCAPE",
+      title: "Serenity Landscape",
+      description: "A serene landscape design with a focus on tranquility.",
+    },
+
+    //renovation
+    {
+      id: 15,
+      src: "/images/reno1.jpg",
+      category: "RENOVATION",
+      title: "Kenny Renovation",
+      description:
+        "A comprehensive renovation project for a historic building.",
+    },
+    {
+      id: 16,
+      src: "/images/reno2.jpg",
+      category: "RENOVATION",
+      title: "Malvis Renovation",
+      description:
+        "A modern renovation project with innovative design elements.",
+    },
   ];
 
   const [active, setActive] = useState("ALL PROJECTS");
@@ -88,8 +207,7 @@ export default function Projects() {
       </motion.p>
 
       {/* Tabs */}
-    <div className="w-full flex justify-center mt-10 mb-8">
-        {/* Tabs */}
+      <div className="w-full flex justify-center mt-10 mb-8">
         <div className="w-full overflow-x-auto scrollbar-hide">
           <div className="flex gap-3 min-w-max justify-center lg:justify-center">
             {tabs.map((tab) => (
@@ -122,14 +240,14 @@ export default function Projects() {
           <div className="flex justify-end gap-3 mb-3">
             <button
               ref={prevRef}
-              className="custom-prev bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+              className="custom-prev bg-white max-xl:bg-[#F4B400] max-xl:text-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
               aria-label="Previous"
             >
               <IoArrowBackOutline size={22} />
             </button>
             <button
               ref={nextRef}
-              className="custom-next bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+              className="custom-next bg-white max-xl:bg-[#F4B400] max-xl:text-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
               aria-label="Next"
             >
               <IoArrowForwardOutline size={22} />
@@ -148,26 +266,37 @@ export default function Projects() {
               "--swiper-navigation-color": "#F4B400",
               "--swiper-pagination-color": "#F4B400",
             }}
-            onInit={(swiper) => {
-              // Fix for Swiper custom navigation with React refs
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }}
           >
             {filteredProjects.map((project) => (
               <SwiperSlide key={project.id}>
-                <FollowTooltip text={`Project ${project.id}`}>
-                  <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg group">
-                    <Image
-                      src={project.src}
-                      alt={`Project ${project.id}`}
-                      fill
-                      sizes="100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 cursor-pointer" />
+                <FollowTooltip text={project.title}>
+                  <div className="relative w-full rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col">
+                    <div className="relative w-full h-72 sm:h-80 md:h-[28rem]">
+                      <Image
+                        src={project.src}
+                        alt={project.title}
+                        fill
+                        sizes="100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10  group-hover:scale-105 transition-all duration-300 cursor-pointer" />
+                    </div>
+                    <div className="flex-1 flex flex-col justify-between p-4">
+                      <div>
+                        <div className="text-xs font-semibold text-[#F4B400] uppercase tracking-widest mb-1 mt-2">
+                          {project.category}
+                        </div>
+                        <div className="text-lg font-bold text-gray-900 mb-2">
+                          {project.title}
+                        </div>
+                        <div className="text-gray-600 text-sm mb-3">
+                          {project.description}
+                        </div>
+                      </div>
+                      {/* <button className="mt-auto border border-[#F4B400] text-[#F4B400] px-4 py-2 text-xs font-semibold rounded bg-white hover:bg-[#F4B400] hover:text-white transition-all duration-200 flex items-center gap-2">
+                        VIEW MORE <FaArrowRight size={12} />
+                      </button> */}
+                    </div>
                   </div>
                 </FollowTooltip>
               </SwiperSlide>
@@ -181,7 +310,7 @@ export default function Projects() {
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="mySwiper mt-4"
+            className="mySwiper mt-2" // reduce mt-4 to mt-2 or mt-0
           >
             {filteredProjects.map((project) => (
               <SwiperSlide key={project.id}>
@@ -214,20 +343,36 @@ export default function Projects() {
                 animate="visible"
                 exit="exit"
                 layout
-                className="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg group"
+                className="relative w-full rounded-xl overflow-hidden shadow-lg group bg-white flex flex-col"
               >
-                <FollowTooltip text={`Project ${project.id}`}>
-                  <div className="relative w-full h-full">
+                <FollowTooltip text={project.title}>
+                  <div className="relative w-full h-84 md:h-72 lg:h-80 bg-amber-600">
+                    {" "}
+                    {/* Increased height */}
                     <Image
                       src={project.src}
-                      alt={`Project ${project.id}`}
+                      alt={project.title}
                       fill
-                      sizes="(max-width:768px) 100vw,
-                             (max-width:1200px) 50vw,
-                             33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 cursor-pointer" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 group-hover:scale-105 transition-all duration-300 cursor-pointer" />
+                  </div>
+                  <div className="flex-1 flex flex-col justify-between p-4">
+                    <div>
+                      <div className="text-xs font-semibold text-[#F4B400] uppercase tracking-widest mb-1 mt-2">
+                        {project.category}
+                      </div>
+                      <div className="text-lg font-bold text-gray-900 mb-2">
+                        {project.title}
+                      </div>
+                      <div className="text-gray-600 text-sm mb-3">
+                        {project.description}
+                      </div>
+                    </div>
+                    {/* <button className="mt-auto border border-[#F4B400] text-[#F4B400] px-4 py-2 text-xs font-semibold rounded bg-white hover:bg-[#F4B400] hover:text-white transition-all duration-200 flex items-center gap-2">
+                      VIEW MORE <FaArrowRight size={12} />
+                    </button> */}
                   </div>
                 </FollowTooltip>
               </motion.div>

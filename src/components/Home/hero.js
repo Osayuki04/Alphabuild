@@ -54,8 +54,8 @@ export default function Hero() {
             <Button variant="primary" href="/Projects">
               Get Started
             </Button>
-            <Button variant="outline" href="/About">
-              Learn More
+            <Button variant="outline" href="/Contact">
+              Contact Us
             </Button>
           </motion.div>
         </motion.div>
@@ -79,8 +79,8 @@ export default function Hero() {
               className=" rounded-lg max-xl:w-full"
             />
           </motion.div>
-          <div className="absolute  xl:h-28 max-sm:h-18 max-xl:h-36 top-[71.5%]  max-xl:top-[75.8%] bottom-0  max-md:bottom-0  w-full rounded-lg text-xs sm:text-sm font-semibold">
-            <div className="grid grid-cols-3 md:gap-3  h-full">
+          <div className="absolute  xl:h-28 max-sm:h-18 max-xl:h-36 top-[70%]  max-xl:top-[68.8%] bottom-0  max-md:bottom-0  w-full rounded-lg text-xs sm:text-sm font-semibold">
+            <div className="grid grid-cols-3 md:gap-1.5  h-full">
               {[
                 {
                   bg: "bg-[#A47042] text-white",

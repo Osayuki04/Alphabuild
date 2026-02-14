@@ -142,7 +142,7 @@ const ContactPage = () => {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full lg:h-[75vh] max-lg:h-[50vh] mb-2"
+        className="relative w-full lg:h-[75vh] max-lg:h-[60vh] mb-2"
         style={{ cursor: "pointer" }}
       >
         <div className="absolute inset-0 w-full">
@@ -158,7 +158,7 @@ const ContactPage = () => {
         </div>
         {/* Animated Centered Content */}
         <motion.div
-          className="absolute inset-0 flex items-center justify-center"
+          className="absolute inset-0 flex flex-col items-center justify-center"
           style={{
             willChange: "transform",
             transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
@@ -175,12 +175,20 @@ const ContactPage = () => {
           >
             Contact Us
           </motion.h1>
+          <motion.p
+            className="text-white text-base md:text-lg max-w-2xl mx-auto mt-2 drop-shadow-md"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          >
+            We are here to assist you with any inquiries or support you may need.
+          </motion.p>
         </motion.div>
       </div>
 
       {/* Contact Section */}
       <motion.div
-        className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-6 md:px-12 py-20"
+        className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 px-6 md:px-12 py-20"
         initial="hidden"
         animate="visible"
         variants={{

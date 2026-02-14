@@ -238,14 +238,15 @@ export default function Navbar() {
               })}
 
               <motion.div className="mt-8 w-full  flex flex-col">
+              <Link href="/Contact" className="w-full">
                 <button
                   variant="primary"
-                  href="/Contact"
                   className="w-full py-3 rounded-xl bg-[#F4B400] text-black  h-[50px] text-base flex items-center justify-center rounded transition-all duration-200 cursor-pointer   "
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact Us
                 </button>
+                </Link>
               </motion.div>
             </motion.nav>
           </>

@@ -43,19 +43,16 @@ export default function MiniAbout() {
             viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
-            <div>
-              <p className="font-bold text-gray-900 text-base md:text-lg mb-2">
+            <div className="">
+              <p className="font-bold text-gray-900 text-base md:text-lg mb-2 lg:mt-32">
                 At Alphabuild, we are dedicated to delivering exceptional
                 construction services that exceed our clients expectations.
-                integrity, and customer satisfaction, we strive to build lasting relationships and create spaces that inspire and
+       
               </p>
               <p className="text-gray-700 text-sm md:text-base">
                 Our team of experienced professionals is committed to excellence in
                 every project we undertake, ensuring that we bring our clients visions
-                to life with precision and care.  With a
-                focus on quality, integrity, and customer satisfaction, we strive
-                to build lasting relationships and create spaces that inspire and
-                endure.
+                to life with precision and care.  
               </p>
             </div>
             <div className="flex flex-col gap-2">

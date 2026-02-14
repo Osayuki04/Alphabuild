@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "../UI/buton";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,7 +35,7 @@ const cardVariants = {
 };
 
 const LatestNews = () => (
-  <section className="py-10 px-2 mt-20 md:px-2">
+  <section className="py- px-2 mt-20 md:px-2">
     <motion.div
       className="text-left mx-auto px-3  "
       initial={{ opacity: 0, y: 30 }}
@@ -56,7 +57,7 @@ const LatestNews = () => (
         Insights And Company Milestones. Our Latest News & Stories Section Keeps
         You Connected To Our Journey.
       </p>
-      <Button variant="primary" href="/news" className="xl:hidden">
+      <Button variant="primary" href="/Blog" className="xl:hidden">
         See More
       </Button>
     </motion.div>
@@ -130,6 +131,7 @@ const LatestNews = () => (
                 <p className="text-[clamp(0.9rem,1.2vw,1.1rem)] text-gray-700 mb-4">
                   {news.desc}
                 </p>
+                <Link href="/Blog" className="w-full">      
                 <motion.button
                   className="bg-[#F4B400] border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#ffd84d] hover:text-white transition"
                   aria-label="Next"
@@ -139,6 +141,7 @@ const LatestNews = () => (
                 >
                   <IoArrowForwardOutline size={22} color="white" />
                 </motion.button>
+                </Link>
               </div>
             </motion.div>
           ))}

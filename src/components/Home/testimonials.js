@@ -189,14 +189,14 @@ export default function Testimonials() {
             {/* Mobile Nav */}
             <div className="flex justify-center gap-3 mt-6 lg:hidden">
               <button
-                className="custom-prev bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+                className="custom-prev max-xl:bg-[#F4B400] max-xl:text-white bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
                 aria-label="Previous"
               >
                 <IoArrowBackOutline size={22} />
               </button>
 
               <button
-                className="custom-next bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+                className="custom-next max-xl:bg-[#F4B400] max-xl:text-white bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
                 aria-label="Next"
               >
                 <IoArrowForwardOutline size={22} />

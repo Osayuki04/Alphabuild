@@ -28,7 +28,7 @@ export default function ContactForm() {
 
   return (
     <motion.form
-      className="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-5"
+      className="bg-white rounded-2xl shadow-lg p-3 flex flex-col gap-5"
       onSubmit={handleSubmit}
       initial="hidden"
       animate="visible"

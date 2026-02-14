@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
+import Link from "next/link";
 import {
   MdHomeWork,
   MdOutlineDesignServices,
@@ -105,8 +106,9 @@ export default function Services() {
                 >
                   {service.desc}
                 </p>
+                <Link href="/Services" className="w-full">
                 <button
-                  className={`flex space-between items-center w-full gap-2 px-5 py-2 rounded-lg font-semibold text-sm md:text-base transition-all duration-200 border-2 focus:outline-none ${
+                  className={`flex space-between items-center w-full gap-2 px-5 py-2 rounded-lg font-semibold text-sm md:text-base transition-all duration-200 border-2 cur focus:outline-none ${
                     activeIndex === idx
                       ? "bg-yellow-400 border-yellow-400 text-gray-900 shadow-lg"
                       : "bg-white border-yellow-400 text-gray-900 hover:bg-yellow-50"
@@ -115,23 +117,24 @@ export default function Services() {
                     fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
                   }}
                 >
-                  Get Started
+                 Learn More
                   <IoArrowForwardOutline size={20} className="" />
                 </button>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </Link>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
         <div className="flex justify-center gap-6">
           <button
-            className="services-swiper-prev bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+            className="services-swiper-prev bg-white max-xl:text-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow max-xl:bg-[#F4B400] hover:bg-[#F4B400] hover:text-white transition"
             aria-label="Previous"
           >
             <IoArrowBackOutline size={22} />
           </button>
           <button
-            className="services-swiper-next bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
+            className="services-swiper-next max-xl:bg-[#F4B400] max-xl:text-white bg-white border border-gray-300 rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-[#F4B400] hover:text-white transition"
             aria-label="Next"
           >
             <IoArrowForwardOutline size={22} />
