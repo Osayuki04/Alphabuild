@@ -11,7 +11,7 @@ export default function ContactForm() {
     const email = form.email.value;
     const subject = form.subject.value;
     const message = form.message.value;
-    const mailto = `mailto:neuro@mail.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+    const mailto = `mailto:davidobazee09@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
     window.location.href = mailto;
   };
 

@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 import {
   FaFacebookF,
   FaInstagram,
-  FaTwitter,
+  
   FaLinkedinIn,
 } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,10 +20,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://facebook.com", icon: <FaFacebookF />, label: "Facebook" },
-  { href: "https://instagram.com", icon: <FaInstagram />, label: "Instagram" },
-  { href: "https://twitter.com", icon: <FaTwitter />, label: "Twitter" },
-  { href: "https://linkedin.com", icon: <FaLinkedinIn />, label: "LinkedIn" },
+  { href: "https://linktr.ee/Yuki_dev04", icon: <FaFacebookF />, label: "Facebook" },
+  { href: "https://linktr.ee/Yuki_dev04", icon: <FaInstagram />, label: "Instagram" },
+  { href: "https://linktr.ee/Yuki_dev04", icon: <BsTwitterX />, label: "X" },
+  { href: "https://linktr.ee/Yuki_dev04", icon: <FaLinkedinIn />, label: "LinkedIn" },
 ];
 
 export default function Footer2() {

@@ -26,7 +26,7 @@ export default function Hero() {
           >
             Building &nbsp;
             <TypingText
-              words={["dreams,", " homes,", " structures,"]}
+              words={["Dreams,", " Homes,", " Structures,"]}
               typeSpeed={80}
               backSpeed={30}
               loop={true}

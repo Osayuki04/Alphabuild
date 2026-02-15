@@ -8,12 +8,13 @@ import ContactMap from "../../components/UI/ContactMap";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   FaFacebookF,
-  FaTwitter,
+  
   FaLinkedinIn,
   FaInstagram,
-  FaWhatsapp,
+  FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const ContactPage = () => {
   // Parallax state for hero text
@@ -100,37 +101,37 @@ const ContactPage = () => {
   // Social links data
   const socials = [
     {
-      href: "https://facebook.com/",
+      href: "https://linktr.ee/Yuki_dev04",
       icon: <FaFacebookF />,
       label: "Facebook",
       color: "hover:text-[#1877f3]",
     },
     {
-      href: "https://twitter.com/",
-      icon: <FaTwitter />,
-      label: "Twitter",
+      href: "https://linktr.ee/Yuki_dev04",
+      icon: <BsTwitterX />,
+      label: "X",
       color: "hover:text-[#1da1f2]",
     },
     {
-      href: "https://linkedin.com/",
+      href: "https://linktr.ee/Yuki_dev04",
       icon: <FaLinkedinIn />,
       label: "LinkedIn",
       color: "hover:text-[#0077b5]",
     },
     {
-      href: "https://instagram.com/",
+      href: "https://linktr.ee/Yuki_dev04",
       icon: <FaInstagram />,
       label: "Instagram",
       color: "hover:text-[#e4405f]",
     },
     {
-      href: "https://wa.me/2348012345678",
-      icon: <FaWhatsapp />,
-      label: "WhatsApp",
+      href: "https://linktr.ee/Yuki_dev04",
+      icon: <FaTiktok />,
+      label: "Tiktok",
       color: "hover:text-[#25d366]",
     },
     {
-      href: "https://youtube.com/",
+      href: "https://linktr.ee/Yuki_dev04",
       icon: <FaYoutube />,
       label: "YouTube",
       color: "hover:text-[#ff0000]",
