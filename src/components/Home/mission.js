@@ -24,7 +24,7 @@ export default function Mission() {
   return (
     <section
       ref={ref}
-      className="mt-20 mx-auto px-4 sm:px-6 xl:px-20 py-12 grid grid-cols-1 lg:grid-cols-2 gap-18 items-center "
+      className="mt-20 mx-auto px-4 sm:px-6 2xl:px-32 py-12 grid grid-cols-1 lg:grid-cols-2 gap-18 items-center max-w-[1800px]"
     >
       <motion.div
         className="w-full flex justify-center"
@@ -33,7 +33,7 @@ export default function Mission() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div
-          className="w-full max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[689px]"
+          className="w-full max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[689px] 2xl:max-w-[800px]"
           initial={{ scale: 0.95, opacity: 0 }}
           animate={
             inView ? { scale: 1, opacity: 1 } : { scale: 0.95, opacity: 0 }
@@ -74,22 +74,25 @@ export default function Mission() {
         </motion.div>
       </motion.div>
       <motion.div
-        className="max-xl:ml-0  max-xl:mx-auto max-xl:w-full flex flex-col items-center xl:items-start xl:ml-4 xl:w-auto "
+        className="max-xl:ml-0  max-xl:mx-auto max-xl:w-full flex flex-col items-center xl:items-start xl:ml-4 xl:w-auto"
         initial={{ opacity: 0, x: 40 }}
         animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-2xl sm:text-3xl xl:text-4xl font-semibold leading-tight max-xl:text-center lg:text-left lg:mt-28 max-lg:-mt-12"
+          className="text-2xl sm:text-3xl xl:text-4xl 2xl:text-5xl font-semibold leading-tight max-xl:text-center lg:text-left lg:mt-28 max-lg:-mt-12"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.2, duration: 0.7 }}
         >
-          Building A 
-          Better <br /> Future <span className="text-[#F4B400] italic">Tomorrow</span> For You
+          Building A
+          <br /> Future <span className="text-[#F4B400] italic">
+            Tomorrow
+          </span>{" "}
+          For You
         </motion.h1>
         <motion.div
-          className="mt-6  space-y-3  text-gray-600 justify-center xl:text-left"
+          className="mt-6 space-y-3 text-gray-600 justify-center xl:text-left"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={{

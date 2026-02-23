@@ -35,7 +35,7 @@ const cardVariants = {
 };
 
 const LatestNews = () => (
-  <section className="py- px-2 mt-20 md:px-2">
+  <section className="pb-20 px-2 mt-20 md:px-2">
     <motion.div
       className="text-left mx-auto px-3  "
       initial={{ opacity: 0, y: 30 }}
@@ -43,7 +43,7 @@ const LatestNews = () => (
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center xl:mx-5">
         <h2 className="text-2xl md:text-4xl font-bold m-0 mb-2 lg:mb-0">
           Latest <span className="text-[#F4B400] italic"> Blogs </span>And
           Stories
@@ -52,7 +52,7 @@ const LatestNews = () => (
           See More
         </Button>
       </div>
-      <p className="text-sm md:text-base text-gray-700 mb-6 max-w-[600px]">
+      <p className="text-sm md:text-base text-gray-700 mb-6 max-w-[600px] xl:mx-5">
         From Newly Completed Projects And Behind-The-Scenes Updates To Industry
         Insights And Company Milestones. Our Latest News & Stories Section Keeps
         You Connected To Our Journey.
