@@ -223,7 +223,7 @@ const ContactPage = () => {
            AlphaBuild is here to assist you with any inquiries or support you may need. Questions about our services or need help with anything else, our team is ready to help you.
           </motion.p>
           <motion.div
-            className="grid grid-cols-2 gap-6 mb-6"
+            className="grid grid-cols-2 max-sm:grid-cols-1 gap-6 mb-6"
             initial="hidden"
             animate="visible"
             variants={{
