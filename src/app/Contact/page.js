@@ -207,7 +207,7 @@ const ContactPage = () => {
           custom={0}
         >
           <motion.h1
-            className="text-3xl md:text-5xl font-bold mb-6 text-gray-900"
+            className="text-2xl max-md:self-center md:text-3xl font-bold mb-6 text-gray-900"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -215,12 +215,12 @@ const ContactPage = () => {
             We are always ready to help you and answer your questions
           </motion.h1>
           <motion.p
-            className="text-gray-700 mb-8 max-w-lg"
+            className="text-gray-700 mb-8 max-md:self-center m"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           >
-           AlphaBuild is here to assist you with any inquiries or support you may need. Whether you have questions about our services, want to discuss a project, or need help with anything else, our team is ready to help you.
+           AlphaBuild is here to assist you with any inquiries or support you may need. Questions about our services or need help with anything else, our team is ready to help you.
           </motion.p>
           <motion.div
             className="grid grid-cols-2 gap-6 mb-6"
@@ -236,6 +236,7 @@ const ContactPage = () => {
               animate="visible"
               exit="exit"
               custom={0}
+              className="p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  hover:bg-gray-50"
             >
               <div className="text-sm font-semibold text-gray-900 mb-2">
                 Call Center
@@ -249,6 +250,7 @@ const ContactPage = () => {
               animate="visible"
               exit="exit"
               custom={1}
+              className="p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  hover:bg-gray-50"
             >
               <div className="text-sm font-semibold text-gray-900 mb-2">
                 Our Location
@@ -260,10 +262,11 @@ const ContactPage = () => {
             </motion.div>
           </motion.div>
           <motion.div
-            className="mb-6"
+            className="mb-6 p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  hover:bg-gray-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
+            
           >
             <div className="text-sm font-semibold text-gray-900 mb-2">
               Email
@@ -271,6 +274,7 @@ const ContactPage = () => {
             <div className="text-gray-700 text-sm">alphabuild@mail.co</div>
           </motion.div>
           <motion.div
+            className="mb-6 p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  hover:bg-gray-50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
@@ -297,7 +301,7 @@ const ContactPage = () => {
         </motion.div>
         {/* Right: Form */}
         <motion.div
-          className="flex flex-col justify-center"
+          className="flex flex-col justify-center lg:mt-8 "
           variants={fadeUp}
           initial="hidden"
           animate="visible"

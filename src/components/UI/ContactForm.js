@@ -28,7 +28,8 @@ export default function ContactForm() {
 
   return (
     <motion.form
-      className="bg-white rounded-2xl shadow-lg p-3 flex flex-col gap-5"
+      className="bg-white rounded-2xl shadow-lg p-3 flex flex-col gap-5  p-6 rounded-lg shadow-lg flex flex-col gap-4 transition-all duration-300 border  border-[#F4B400]  "
+           
       onSubmit={handleSubmit}
       initial="hidden"
       animate="visible"
@@ -55,7 +56,7 @@ export default function ContactForm() {
         type="text"
         placeholder="Full name"
         required
-        className="border border-gray-300 rounded-md px-4 py-2 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
+        className="border border-gray-300 rounded-md px-4 py-3 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
         variants={fadeUp}
         custom={2}
       />
@@ -64,7 +65,7 @@ export default function ContactForm() {
         type="email"
         placeholder="Email"
         required
-        className="border border-gray-300 rounded-md px-4 py-2 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
+        className="border border-gray-300 rounded-md px-4 py-3 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
         variants={fadeUp}
         custom={3}
       />
@@ -73,7 +74,7 @@ export default function ContactForm() {
         type="text"
         placeholder="Subject"
         required
-        className="border border-gray-300 rounded-md px-4 py-2 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
+        className="border border-gray-300 rounded-md px-4 py-3 focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
         variants={fadeUp}
         custom={4}
       />
@@ -81,7 +82,7 @@ export default function ContactForm() {
         name="message"
         placeholder="Message"
         required
-        className="border border-gray-300 rounded-md px-4 py-2 min-h-[120px] focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
+        className="border border-gray-300 rounded-md px-4 py-3 min-h-[120px] focus:border-[#F4B400] focus:ring-[#F4B400] outline-none"
         variants={fadeUp}
         custom={5}
       />
