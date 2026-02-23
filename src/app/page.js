@@ -1,7 +1,6 @@
 
 import Hero from '../components/Home/hero';
 import Mission from '../components/Home/mission';
-import PromoTestimonial from '../components/Home/promoTestimonial';
 import Projects from '../components/Home/projects';
 import Services from '../components/Home/services';
 import Testimonials from '../components/Home/testimonials';
@@ -17,17 +16,16 @@ export default function LandingPage() {
   return (
     <>
     
-      <Hero className="" />
+      <Hero  />
+      <Blur />
       <Mission />
        <MiniAbout />  
-       {/* <PromoTestimonial /> */}
       <Services />
       <Projects />
       <Testimonials />
       <LatestNews />
       <FAQ /> 
       <Footer2 />
-      <Blur />
      
     </>
   );
