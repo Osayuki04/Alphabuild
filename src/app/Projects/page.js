@@ -8,6 +8,7 @@ import Footer2 from "@/components/UI/footer2";
 import { motion, AnimatePresence } from "framer-motion";
 import FollowTooltip from "@/components/UI/tooltip";
 import { FaArrowRight } from "react-icons/fa";
+import Blur from "@/components/UI/blur";
 
 const ProjectsPage = () => {
   const tabs = [
@@ -448,6 +449,7 @@ const ProjectsPage = () => {
       </div>
 
       <Footer2 />
+           <Blur />
 
       <style jsx>{`
         @media (max-width: 1280px) {

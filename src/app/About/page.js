@@ -5,6 +5,7 @@ import Footer2 from "@/components/UI/footer2";
 import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+import Blur from "@/components/UI/blur";
 
 // Simple animated counter hook
 function useCountUp(to, duration = 1200) {
@@ -415,6 +416,7 @@ const AboutPage = () => {
       </motion.div>
 
       <Footer2 />
+      <Blur />
     </section>
   );
 };

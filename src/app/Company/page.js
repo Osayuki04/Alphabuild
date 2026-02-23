@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Footer2 from "@/components/UI/footer2";
 import { motion } from "framer-motion";
+import Blur from "@/components/UI/blur";
 
 const CompanyPage = () => {
   const teamMembers = [
@@ -189,6 +190,7 @@ const CompanyPage = () => {
       </div>
 
       <Footer2 />
+      <Blur />
     </section>
   );
 };

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Footer2 from "@/components/UI/footer2";
 import Button from "./../../components/UI/buton"
+import Blur from "@/components/UI/blur";
 
 const ServicesPage = () => {
   
@@ -332,8 +333,8 @@ const ServicesPage = () => {
           </Button>
         </div>
       </motion.div>
-
       <Footer2 />
+        <Blur />
     </section>
   );
 };

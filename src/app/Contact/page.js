@@ -15,6 +15,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import Blur from "@/components/UI/blur";
 
 const ContactPage = () => {
   // Parallax state for hero text
@@ -317,6 +318,7 @@ const ContactPage = () => {
         <ContactMap />
       </motion.div>
       <Footer2 />
+        <Blur />
     </section>
   );
 };

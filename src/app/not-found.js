@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaSadTear } from "react-icons/fa";
 import Logo from "@/components/UI/logo";
+import Blur from "@/components/UI/blur";
 
 export default function NotFound() {
   return (
@@ -125,6 +126,7 @@ export default function NotFound() {
           </Link>
         </motion.div>
       </motion.div>
+           <Blur />
     </section>
   );
 }

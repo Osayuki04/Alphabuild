@@ -4,6 +4,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Footer2 from "@/components/UI/footer2";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Blur from "@/components/UI/blur";
 
 const BlogPage = () => {
   const articles = [
@@ -215,7 +216,7 @@ const BlogPage = () => {
       </div>
       {/* Articles Section */}
       <motion.div
-        className="w-full max-w-5xl mx-auto py-20 px-4 md:px-12"
+        className="w-full max-w-6xl mx-auto py-20 px-4 md:px-12"
         initial="hidden"
         animate="visible"
         variants={{
@@ -294,6 +295,7 @@ const BlogPage = () => {
       </motion.div>
 
       <Footer2 />
+      <Blur />
     </section>
   );
 };
